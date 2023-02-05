@@ -1,0 +1,130 @@
+body {
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  padding: 40px 100px;
+  border-radius: 1vw;
+}
+
+.notes-header {
+  margin-bottom: 10px;
+}
+
+.notes-text {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.notes-text-inner {
+  position: relative;
+  margin-bottom: 10px;
+  height: 240px;
+  z-index: 0;
+}
+
+.notes-text-inner form {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  font-size: var(--chakra-fontSizes-md);
+  border: 1px solid;
+  border-color: inherit;
+  background: inherit;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+}
+
+.notes-text-inner form:focus-within {
+  z-index: 1;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 1px #3182ce;
+}
+
+.notes-text-inner textarea {
+  height: 160px;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  box-shadow: none !important;
+  flex: 1;
+}
+
+.notes-text-footer-buttons {
+  flex: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.notes-text-inner form:has(.notes-text-footer button:focus)  {
+  border-color: inherit;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.notes-footer {
+  position: relative;
+}
+
+.notes-footer-inner {
+  width: 100%;
+  gap: 20px;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: absolute;
+  padding-bottom: 20px;
+}
+
+.color-palette span {
+  border-radius: 50%;
+  display: inline-block;
+  height: 30px; 
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.color-palette span:hover {
+  box-shadow: var(--data-color) 0 3px 8px;
+}
+
+.color-palette .selected::after {
+  content: "✓";
+  color: #fff;
+  font-weight: bold;
+}
+
+.banner {
+  border-radius: 50%;
+  margin-left: 10px;
+  padding: 1px;
+  position: absolute;
+  right: 10px;
+}
+
+.color-palette {
+  display: flex;
+  flex-direction: row;
+  gap: 10px
+}
+
+.notes-footer button {
+  flex-basis: 30%;
+  position: relative;
+}
+
